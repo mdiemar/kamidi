@@ -1,0 +1,59 @@
+<div class="row">
+    <h1>Movies</h1>
+</div>
+<div class="row" style="padding-bottom: 8px;">
+    <span><input type="text" id="movie_title_search_field" placeholder="Filter movie-title" size="24"></span>
+</div>
+
+<div class="row">
+
+    <table class="table table-bordered table-sm">
+        <thead class="thead-dark">
+            <tr class="">
+                <th class="">
+                    Title
+                    
+                </th>
+                <th class="">Subtitle</th>
+                <th class="">Playtime (min.)</th>
+                <th class="">Media</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <% @movies.each do |movie| %>
+                <tr class=" movie">
+                    <td class=""><%= movie.title %></td>
+                    <td class=""><%= movie.subtitle %></td>
+                    <td class=""><%= movie.playtime %></td>
+                    <td class=""><%= movie.media %></td>
+                </tr>
+            <% end %>
+        <tbody>
+    </table>
+
+</div>
+
+<script>
+/* Code moved to application.js OR custom.js
+    //Code für Movies->Index
+    const searchElement = document.getElementById("search_field");
+
+    console.log(searchElement);
+
+    const search_movie = () => {
+    const movies = document.getElementsByClassName("movie");
+    //alert("Searchterm: " + term)
+    //alert("Found movies: " + movies.length)
+    for (const movie of movies) {
+        if (!movie.children[0].innerText.includes(searchElement.value)) {
+            movie.style.display="none";
+        } else {
+            movie.style.display="";
+        }
+    }    
+    };
+
+    searchElement.addEventListener("input", search_movie );
+    */
+</script>
