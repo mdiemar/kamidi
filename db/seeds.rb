@@ -13,6 +13,9 @@ CSV.foreach(Rails.root.join('db/Videoliste.csv'), headers: false) do |row|
     title: row[1],
     subtitle: row[2],
     playtime: row[3],
-    media: row[4]
+    media: row[4],
+    year: row[7],
+    collection: row[8],
+    comment: row[9]
   })
 end

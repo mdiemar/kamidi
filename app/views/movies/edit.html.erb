@@ -1,0 +1,47 @@
+<h1>Editing <%= @movie.title %></h1>
+
+<table class="table">
+    <%= form_with(model: @movie, local: true) do |f| %>
+        <tr>
+            <td>
+                <%= f.label :title %>
+            </td>
+            <td>
+                <%= f.text_field :title %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <%= f.label :subtitle %>
+            </td>
+            <td>
+                <%= f.text_field :subtitle %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <%= f.label :year %>
+            </td>
+            <td>
+                <%= f.number_field :year %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <%= f.label :playtime %>
+            </td>
+            <td>
+                <%= f.number_field :playtime %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <%= f.label :director %>
+            </td>
+            <td>
+                <%= f.text_field :director %>
+            </td>
+        </tr>
+        
+    <% end %>
+</table>

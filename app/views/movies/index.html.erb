@@ -17,6 +17,7 @@
                 <th class="">Subtitle</th>
                 <th class="">Playtime (min.)</th>
                 <th class="">Media</th>
+                <th class=""></th>
             </tr>
         </thead>
 
@@ -27,6 +28,10 @@
                     <td class=""><%= movie.subtitle %></td>
                     <td class=""><%= movie.playtime %></td>
                     <td class=""><%= movie.media %></td>
+                    <td style='white-space: nowrap'>
+                        <%= link_to "Show", movie_path(movie.id), class: "btn btn-outline-dark btn-sm" %>
+                        <%= link_to "Edit", edit_movie_path(movie.id), class: "btn btn-outline-dark btn-sm" %>
+                    </td>
                 </tr>
             <% end %>
         <tbody>

@@ -5,6 +5,7 @@ class CreateMovies < ActiveRecord::Migration[6.0]
       t.string :subtitle
       t.integer :playtime
       t.string :media
+      t.string :collection
 
       t.timestamps
     end
