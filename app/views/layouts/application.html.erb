@@ -21,14 +21,34 @@
         </button>
         <div class="collap navbar-collapse" id="navbarMain">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
+            <li class="nav-item">
               <a class="nav-link" href="/">Home</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/movies">Movies</a>
+            </li>
           </ul>
+           
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <% if Current.user %>
+              <li class="nav-item">
+                <%= link_to Current.user.email, root_path, class: "nav-link" %>
+              </li>
+              <li class="nav-item">
+                <%= button_to "Logout", logout_path, method: :delete, class: "btn btn-outline-secondary" %>
+              </li>
+            <% else %>
+              <li class="nav-item">
+                <%= link_to "Login", sign_in_path, class: "nav-link" %>
+              </li>
+            <% end %>
+          </ul>
+
         </div>   
       </nav>
       <!-- Hauptinhalt -->
       <div class="container">
+        <%= render partial: "shared/flash" %>
         <%= yield %>
       </div>
 
