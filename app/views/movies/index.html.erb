@@ -2,8 +2,11 @@
     <h1>Movies</h1>
 </div>
 <div class="row" style="padding-bottom: 8px;">
+  <div>
     <span><input type="text" id="movie_title_search_field" placeholder="Filter movie-title" size="24"></span>
+  </div>
 </div>
+
 
 <div class="row">
 
@@ -17,7 +20,7 @@
                 <th class="">Subtitle</th>
                 <th class="">Playtime (min.)</th>
                 <th class="">Media</th>
-                <th class=""></th>
+                <th class=""><%= link_to "New Movie", new_movie_path, class: "btn btn-light btn-sm" %></th>
             </tr>
         </thead>
 

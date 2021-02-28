@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   post "sign_in", to: 'sessions#create'
   delete "logout", to: 'sessions#destroy'
 
-  resources :movies, only: [:index, :show, :new, :create, :edit]
+  resources :movies, only: [:index, :show, :new, :create, :edit, :update]
 end

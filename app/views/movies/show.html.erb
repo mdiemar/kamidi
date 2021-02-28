@@ -4,36 +4,39 @@
 
 <div class="row">
 
-    <table class="table table-sm">
+  <table class="table table-sm">
 
-        <tbody>
-            
-            <tr>
-                <td>Subtitle:</td>
-                <td><%= @movie.subtitle %></td>
-            </tr>
-            <tr>
-                <td>Playtime:</td>
-                <td><%= @movie.playtime %></td>
-            </tr>
-            <tr>
-                <td>Year:</td>
-                <td><%= @movie.year %></td>
-            </tr>
-            <tr>
-                <td>Director:</td>
-                <td><%= @movie.director %></td>
-            </tr>
-            <tr>
-                <td>Media:</td>
-                <td><%= @movie.media %></td>
-            </tr>
-            <tr>
-                <td>Comments:</td>
-                <td><%= @movie.comment %></td>
-            </tr>
-            
-        <tbody>
-    </table>
-
+      <tbody>
+          
+          <tr>
+              <td>Subtitle:</td>
+              <td><%= @movie.subtitle %></td>
+          </tr>
+          <tr>
+              <td>Playtime:</td>
+              <td><%= @movie.playtime %></td>
+          </tr>
+          <tr>
+              <td>Year:</td>
+              <td><%= @movie.year %></td>
+          </tr>
+          <tr>
+              <td>Director:</td>
+              <td><%= @movie.director %></td>
+          </tr>
+          <tr>
+              <td>Media:</td>
+              <td><%= @movie.media %></td>
+          </tr>
+          <tr>
+              <td>Comments:</td>
+              <td><%= @movie.comment %></td>
+          </tr>
+          
+      <tbody>
+  </table>
+  <div>
+    <%= link_to "Back", movies_path, class: "btn btn-outline-dark btn-sm" %>
+    <%= link_to "Edit", edit_movie_path(@movie.id), class: "btn btn-outline-dark btn-sm" %>
+  </div>
 </div>
