@@ -1,0 +1,66 @@
+<div class="row">
+    <h1>Books</h1>
+</div>
+<div class="row" style="padding-bottom: 8px;">
+  <div>
+    <span><input type="text" id="book_title_search_field" placeholder="Filter book-title" size="24"></span>
+  </div>
+</div>
+
+
+<div class="row">
+
+    <table class="table table-bordered table-sm">
+        <thead class="thead-dark">
+            <tr class="">
+                <th class="">
+                    Title
+                </th>
+                <th class="">Subtitle</th>
+                <th class="">Author (min.)</th>
+                <th class="">Year</th>
+                <th class=""><%= link_to "New Book", new_book_path, class: "btn btn-light btn-sm" %></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <% @books.each do |book| %>
+                <tr class=" book">
+                    <td class=""><%= book.title %></td>
+                    <td class=""><%= book.subtitle %></td>
+                    <td class=""><%= book.author %></td>
+                    <td class=""><%= book.year %></td>
+                    <td style='white-space: nowrap'>
+                        <%= link_to "Show", book_path(book.id), class: "btn btn-outline-dark btn-sm" %>
+                        <%= link_to "Edit", edit_book_path(book.id), class: "btn btn-outline-dark btn-sm" %>
+                    </td>
+                </tr>
+            <% end %>
+        <tbody>
+    </table>
+
+</div>
+
+<script>
+/* Code moved to application.js OR custom.js
+    //Code für Books->Index
+    const searchElement = document.getElementById("search_field");
+
+    console.log(searchElement);
+
+    const search_book = () => {
+    const books = document.getElementsByClassName("book");
+    //alert("Searchterm: " + term)
+    //alert("Found books: " + books.length)
+    for (const book of books) {
+        if (!book.children[0].innerText.includes(searchElement.value)) {
+            book.style.display="none";
+        } else {
+            book.style.display="";
+        }
+    }    
+    };
+
+    searchElement.addEventListener("input", search_book );
+    */
+</script>

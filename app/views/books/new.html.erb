@@ -1,0 +1,60 @@
+<h1>New Book</h1>
+
+<%= form_with(model: @book) do |form| %>
+  <table class="table">
+    <tr>
+        <td>
+            <%= form.label :title %>
+        </td>
+        <td>
+            <%= form.text_field :title %>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <%= form.label :subtitle %>
+        </td>
+        <td>
+            <%= form.text_field :subtitle %>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <%= form.label :author %>
+        </td>
+        <td>
+            <%= form.text_field :author %>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <%= form.label :year %>
+        </td>
+        <td>
+            <%= form.text_field :year %>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <%= form.label :publisher %>
+        </td>
+        <td>
+            <%= form.text_field :publisher %>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <%= form.label :disposal %>
+        </td>
+        <td>
+            <%= form.text_field :disposal %>
+        </td>
+    </tr>
+    <tr>
+      <td>
+        <%= form.submit "Save" %>
+      </td>
+    </tr>
+  </table>
+<% end %>
+<%= link_to "Back", books_path, class: "btn btn-outline-dark btn-sm" %>

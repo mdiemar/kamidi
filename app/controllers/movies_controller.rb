@@ -2,7 +2,12 @@ class MoviesController < ApplicationController
   before_action :require_user_logged_in!
 
   def index
-      @movies = Movie.all.order(:title)
+    @movies = Movie.all.order(:title)
+
+    respond_to do |format|
+      format.html
+      format.json {render :json => @movies}
+    end
   end
   def edit
       @movie = Movie.find(params[:id])
