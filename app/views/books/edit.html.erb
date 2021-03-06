@@ -44,6 +44,14 @@
     </tr>
     <tr>
         <td>
+            <%= form.label :media %>
+        </td>
+        <td>
+            <%= form.select(:media, Book::MEDIA) %>
+        </td>
+    </tr>
+    <tr>
+        <td>
             <%= form.label :disposal %>
         </td>
         <td>

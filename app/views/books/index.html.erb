@@ -19,6 +19,7 @@
                 <th class="">Subtitle</th>
                 <th class="">Author (min.)</th>
                 <th class="">Year</th>
+                <th class="">Media</th>
                 <th class=""><%= link_to "New Book", new_book_path, class: "btn btn-light btn-sm" %></th>
             </tr>
         </thead>
@@ -30,6 +31,7 @@
                     <td class=""><%= book.subtitle %></td>
                     <td class=""><%= book.author %></td>
                     <td class=""><%= book.year %></td>
+                    <td class=""><%= book.media %></td>
                     <td style='white-space: nowrap'>
                         <%= link_to "Show", book_path(book.id), class: "btn btn-outline-dark btn-sm" %>
                         <%= link_to "Edit", edit_book_path(book.id), class: "btn btn-outline-dark btn-sm" %>
