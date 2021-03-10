@@ -28,7 +28,7 @@
                 </th>
                 <th class="">Subtitle</th>
                 <th class=""><%= link_to "Author", {controller: "books", action: "index", :sort => "author"},data: { turbolinks: false }, :class => "text-light" %></th>
-                <th class="">Year</th>
+                <th class=""><%= link_to "Year", {controller: "books", action: "index", :sort => "year"},data: { turbolinks: false }, :class => "text-light" %></th>
                 <th class="">Media</th>
                 <th class=""><%= link_to "New Book", new_book_path, class: "btn btn-light btn-sm" %></th>
             </tr>

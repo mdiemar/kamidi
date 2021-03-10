@@ -36,7 +36,7 @@
       <tbody>
   </table>
   <div>
-    <%= link_to "Back", books_path, class: "btn btn-outline-dark btn-sm" %>
+    <%= link_to "Back", {controller: "books", action: "index"},data: { turbolinks: false }, class: "btn btn-outline-dark btn-sm" %>
     <%= link_to "Edit", edit_book_path(@book.id), class: "btn btn-outline-dark btn-sm" %>
   </div>
 </div>

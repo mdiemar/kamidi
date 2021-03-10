@@ -3,7 +3,7 @@ class BooksController < ApplicationController
 
   def index
     
-    if !(params[:sort].present? && (["title","author"].include? params[:sort]))
+    if !(params[:sort].present? && (["title","author","year"].include? params[:sort]))
       params[:sort] = "id"
     end
 
@@ -12,6 +12,9 @@ class BooksController < ApplicationController
     elsif params[:sort] == "author"
       params[:sort] = "author, subtitle, title"
       @sort_display = "Author + Subtitle + Title"
+    elsif params[:sort] == "year"
+      params[:sort] = "author, year, title"
+      @sort_display = "Author + Year + Title"
     else
       @sort_display = "ID"
     end
