@@ -2,7 +2,22 @@ class BooksController < ApplicationController
   before_action :require_user_logged_in!
 
   def index
-    @books = Book.all.order(:title)
+    
+    if !(params[:sort].present? && (["title","author"].include? params[:sort]))
+      params[:sort] = "id"
+    end
+
+    if params[:sort] == "title"
+      @sort_display = "Title"
+    elsif params[:sort] == "author"
+      params[:sort] = "author, subtitle, title"
+      @sort_display = "Author + Subtitle + Title"
+    else
+      @sort_display = "ID"
+    end
+
+    #@books = Book.all.order(:title)
+    @books = Book.all.order(params[:sort])
 
     respond_to do |format|
       format.html

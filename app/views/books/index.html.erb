@@ -2,8 +2,18 @@
     <h1>Books</h1>
 </div>
 <div class="row" style="padding-bottom: 8px;">
-  <div>
+  (Sortorder: <%= @sort_display %>)
+</div>
+
+<div class="row" style="padding-bottom: 8px;">
+  <div class="col-sm" style="padding-left: 0px;">
     <span><input type="text" id="book_title_search_field" placeholder="Filter book-title" size="24"></span>
+  </div>
+  <div class="col-sm">
+    <span></span>
+  </div>
+  <div class="col-sm">
+    <span><input type="text" id="book_author_search_field" placeholder="Filter book-author" size="24"></span>
   </div>
 </div>
 
@@ -14,10 +24,10 @@
         <thead class="thead-dark">
             <tr class="">
                 <th class="">
-                    Title
+                  <%= link_to "Title", {controller: "books", action: "index", :sort => "title"},data: { turbolinks: false }, :class => "text-light" %>
                 </th>
                 <th class="">Subtitle</th>
-                <th class="">Author (min.)</th>
+                <th class=""><%= link_to "Author", {controller: "books", action: "index", :sort => "author"},data: { turbolinks: false }, :class => "text-light" %></th>
                 <th class="">Year</th>
                 <th class="">Media</th>
                 <th class=""><%= link_to "New Book", new_book_path, class: "btn btn-light btn-sm" %></th>
@@ -26,7 +36,7 @@
 
         <tbody>
             <% @books.each do |book| %>
-                <tr class=" book">
+                <tr class="book">
                     <td class=""><%= book.title %></td>
                     <td class=""><%= book.subtitle %></td>
                     <td class=""><%= book.author %></td>
